@@ -16,7 +16,7 @@ Esta API foi desenvolvida para gerenciar reservas de casas por diferentes usuár
 1. Clone este repositório:
 
 ```sh
-git clone https://github.com/seu-usuario/api-devhouse.git
+git clone https://github.com/WelingtonGulinelli/API-DevHouse.git
 cd api-devhouse
 ```
 

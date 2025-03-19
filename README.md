@@ -62,10 +62,10 @@ nodemon server.js
 
 ## 🔗 Conectando ao MongoDB
 
-A API utiliza o MongoDB para armazenar os dados. De forma mais prática, vá até o site https://cloud.mongodb.com , crie sua conta e um cluster. O usuário pode ter acesso até a 500mb gratuitos pela plataforma. Pegue o link de conexao do seu banco e coloque no arquivo app.js em "mongo.connect"
+A API utiliza o MongoDB para armazenar os dados. De forma mais prática, vá até o site https://cloud.mongodb.com , crie sua conta e um cluster. O usuário pode ter acesso até a 500mb gratuitos pela plataforma. Pegue o link de conexao do seu banco e coloque no arquivo app.js em "mongoose.connect"
 
 ```env
-mongoose.connect('Sua URL do mongo db aqui. Nao esqueca da Senha!!')
+mongoose.connect('Sua URL do Mongodb aqui. Nao esqueca da Senha!!')
 ```
 
 

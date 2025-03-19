@@ -1,6 +1,6 @@
 # API DevHouse
 
-Esta API foi desenvolvida para gerenciar reservas de casas por diferentes usuários, utilizando MongoDB como banco de dados. A API permite criar, listar e excluir reservas, além de gerenciar usuários e casas.
+Esta API foi desenvolvida para gerenciar reservas de casas por diferentes usuários, utilizando MongoDB como banco de dados. A API permite criar, listar e excluir reservas, além de gerenciar usuários e casas. Lembrando que isto é um prototipo, ainda há muita coisa a ser melhorada.
 
 ## 📌 Tecnologias Utilizadas
 

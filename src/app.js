@@ -9,7 +9,7 @@ class App {
 
 
 
-        mongoose.connect('Sua URL do mongo db aqui. Nao esqueca da Senha!!').then(() => console.log("MongoDB conectado!"))
+        mongoose.connect("URL DO BANCO").then(() => console.log("MongoDB conectado!"))
             .catch(err => console.log("Erro ao conectar ao MongoDB:", err));
 
 

@@ -1,5 +1,6 @@
 const House = require('../models/House')
 const User = require('../models/User')
+const Yup = require('yup');
 
 class HouseController {
 
@@ -11,10 +12,25 @@ class HouseController {
     }
 
     async store(req, res) {
+
+        //Usando o Yup para validar o envio dos campos
+        const schema= Yup.object().shape({
+            description: Yup.string().required(),
+            price: Yup.number().required(),
+            location: Yup.string().required(),
+            status: Yup.boolean().required()
+        });
+
+
         const { filename } = req.file;
         const { description, price, location } = req.body;
         const { user_id } = req.headers;
         const status = req.body.status.trim().toLowerCase() === "true"; // Converte string para Booleano
+
+
+        if(!(await schema.isValid(req.body))){
+            return res.status(400).json({error: 'Falha na validacao.' })
+        }
 
         const house = await House.create({
             user: user_id,
@@ -30,6 +46,16 @@ class HouseController {
     }
 
     async update(req, res) {
+         //Usando o Yup para validar o envio dos campos
+         const schema= Yup.object().shape({
+            description: Yup.string().required(),
+            price: Yup.number().required(),
+            location: Yup.string().required(),
+            status: Yup.boolean().required()
+        });
+
+
+
         const { filename } = req.file;
         const { house_id } = req.params;
         const status = req.body.status.trim().toLowerCase() === "true"; // Converte string para Booleano
@@ -39,6 +65,10 @@ class HouseController {
 
         const user = await User.findById(user_id);
         const houses = await House.findById(house_id)
+
+        if(!(await schema.isValid(req.body))){
+            return res.status(400).json({error: 'Falha na validacao.' })
+        }
 
         if (String(user_id) !== String(houses.user)) {
             return res.status(401).json({ error: 'Usuario Nao autorizado' })
